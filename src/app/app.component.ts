@@ -12,10 +12,15 @@ export class AppComponent {
   // variable title de tipo string
   title = 'Listado de personas';
   
-  // variable personas de tipo Persona
-  personas: Persona[]=[
-    new Persona('Juan','Perez'), 
-    new Persona('Laura', 'Juarez'),
-    new Persona('Carla', 'Lara')   
-  ];
+  // creo variable personas de tipo Persona
+  personas:Persona[]=[
+    new Persona('Julia','Robert'),
+    new Persona('Sergio','Goyón'),
+    new Persona('Lucas', 'Lopez')
+  ]
+
+  personaAgregada(persona:Persona) {
+    this.personas.push( persona )
+  }
+  
 }

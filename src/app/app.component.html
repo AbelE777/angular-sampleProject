@@ -1,11 +1,21 @@
 <div class="container">
-
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let persona of personas; let i=index">
-        {{i+1}}: {{persona.nombre}} {{persona.apellido}}
-      </div>
-    </div>
+  <div class="col">
+    <h3>{{title}}</h3>
   </div>
 
+  <hr>
+  <!-- componente hijo -->
+  <app-formulario
+    (personaCreada) = "personaAgregada($event)"
+  >
+  </app-formulario>
+  <hr>
+
+  <!-- componente hijo -->
+  <!-- [persona] e [indice] los recibira el componente hijo como @input -->
+  <app-persona *ngFor="let personaElementos of personas; let i=index" 
+    [persona]="personaElementos" 
+    [indice]="i"
+  >
+  </app-persona>
 </div>
